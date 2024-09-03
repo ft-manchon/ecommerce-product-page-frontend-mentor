@@ -5,7 +5,7 @@ export default function NavBar() {
     <div className="flex gap-6 text-dark-grayish-blue text-sm font-medium">
       {links.map((link) => {
         return (
-          <a className="cursor-pointer">{link}</a>
+          <a className="cursor-pointer py-9 hover:text-black border-b-4 border-transparent hover:border-orange">{link}</a>
         )
       })}
     </div>

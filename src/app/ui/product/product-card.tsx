@@ -3,7 +3,7 @@ import ProductInfo from "./product-info";
 
 export default function ProductCard() {
   return (
-    <div className="py-16 flex items-center justify-center gap-36 m-auto">
+    <div className="flex items-center justify-center gap-32 m-auto h-5/6">
       <Images />
       <ProductInfo />
     </div>
