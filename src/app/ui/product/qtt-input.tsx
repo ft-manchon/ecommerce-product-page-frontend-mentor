@@ -17,10 +17,10 @@ export default function QttInput() {
     }
   }
   return (
-    <div className="flex items-center relative">
+    <div className="flex items-center justify-center relative box-border w-full lg:w-36 ">
       <FaMinus className="absolute left-3 text-orange cursor-pointer" onClick={decrementQtt} />
-      <input type="number" name="qtt" id="qtt" placeholder="0" className="text-center w-36 h-12 font-bold placeholder-black bg-light-grayish-blue rounded-lg" itemID="qtt-input" value={qtt} />
-      <FaPlus className="absolute right-3 text-orange cursor-pointer" id="increment" onClick={incrementQtt} />
+      <input type="number" name="qtt" id="qtt" placeholder="0" className="text-center w-full lg:w-36 h-12 font-bold placeholder-black bg-light-grayish-blue rounded-lg" itemID="qtt-input" value={qtt} />
+      <FaPlus className="absolute right-3 text-orange cursor-pointer " id="increment" onClick={incrementQtt} />
     </div>
   )
 }

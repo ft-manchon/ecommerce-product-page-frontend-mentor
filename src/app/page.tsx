@@ -3,7 +3,7 @@ import ProductCard from "./ui/product/product-card";
 
 export default function Home() {
   return (
-    <main className="bg-white h-screen px-36">
+    <main className="bg-white h-full min-h-screen lg:px-36">
       <Header />
       <ProductCard />
     </main>
