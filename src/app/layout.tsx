@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "./ui/cart/cart-context";
 
 const font = Kumbh_Sans({ subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <CartProvider>
+
+        <body className={font.className}>{children}</body>
+      </CartProvider>
     </html>
   );
 }
