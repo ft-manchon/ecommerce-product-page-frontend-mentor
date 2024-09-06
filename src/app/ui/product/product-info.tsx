@@ -6,6 +6,8 @@ import BtnAddToCart from "../buttons/btn-add-cart";
 import { useCart } from "../cart/cart-context";
 
 const ProductInfoData = {
+  id: 1,
+  imageSrc: '/images/image-product-1.jpg',
   label: "Sneaker Company",
   title: "Fall Limited Edition Sneakers",
   text: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
