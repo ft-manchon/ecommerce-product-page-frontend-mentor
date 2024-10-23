@@ -18,25 +18,35 @@ interface CartItem {
 
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (product: any) => void;
+  addToCart: (product: CartItem, qtt: number) => void;
   removeFromCart: (id: number) => void;
   cartCount: number;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
 
-export function CartProvider({ children } : CartProviderProps) {
-  const [cartItems, setCartItems] = useState<any[]>([]);
+export function CartProvider({ children }: CartProviderProps) {
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = (product: any) => {
-    setCartItems((prevItems) => [...prevItems, product]);
-  }
+  const addToCart = (product: CartItem, qtt: number) => {
+    const itemInCart = cartItems.find(item => item.id === product.id);
+
+    if (itemInCart) {
+      setCartItems(prevItems =>
+        prevItems.map(item =>
+          item.id === product.id ? { ...item, qtt: item.qtt + qtt } : item
+        )
+      );
+    } else {
+      setCartItems((prevItems) => [...prevItems, {...product, qtt}]);
+    }
+  };
 
   const removeFromCart = (id: number) => {
     setCartItems((prevItems) => prevItems.filter(item => item.id != id));
   }
 
-  const cartCount = cartItems.length;
+  const cartCount = cartItems.reduce((count, item) => count + item.qtt, 0);
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, cartCount }}>
@@ -48,7 +58,7 @@ export function CartProvider({ children } : CartProviderProps) {
 export const useCart = () => {
   const context = useContext(CartContext);
 
-  if(!context) {
+  if (!context) {
     throw new Error("useCart must be used within a CartProvider");
   }
   return context;
