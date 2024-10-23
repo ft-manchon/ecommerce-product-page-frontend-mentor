@@ -35,7 +35,7 @@ export default function Cart() {
                 <RemoveFromCart onclick={() => removeFromCart(item.id)} />
               </li>
             ))}
-            <CheckoutBtn />
+            {/* <CheckoutBtn /> */}
           </ul>
         ) : (
           <p className="font-bold text-sm text-dark-grayish-blue m-auto">Your cart is empty.</p>

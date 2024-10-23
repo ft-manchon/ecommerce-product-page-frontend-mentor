@@ -13,7 +13,9 @@ const ProductInfoData = {
   text: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
   priceFull: 250.00,
   discount: 0.5,
-  price: 250 * 0.5
+  price: 250 * 0.5,
+  qtt: 2,
+  totalPrice: 205 * 0.5
 }
 
 export default function ProductInfo() {
@@ -35,7 +37,7 @@ export default function ProductInfo() {
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-4">
           <QttInput />
-          <BtnAddToCart onclick={() => addToCart(ProductInfoData)} />
+          <BtnAddToCart onclick={() => addToCart(ProductInfoData, 2)} />
         </div>
       </div>
   )
