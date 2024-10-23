@@ -5,14 +5,14 @@ import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function Images() {
-  const [image, setImage] = useState("/images/image-product-1");
+  const [image, setImage] = useState("./images/image-product-1");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const productImages = [
-    '/images/image-product-1',
-    '/images/image-product-2',
-    '/images/image-product-3',
-    '/images/image-product-4'
+    './images/image-product-1',
+    './images/image-product-2',
+    './images/image-product-3',
+    './images/image-product-4'
   ]
 
   const previousImage = () => {

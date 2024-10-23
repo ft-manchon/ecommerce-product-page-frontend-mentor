@@ -19,7 +19,7 @@ export default function Header() {
       <div className="flex items-center gap-4 py-0 md:gap-12">
       <RiMenuFill className="w-fit h-5 sm:hidden" />
         <Image
-          src={"/images/logo.svg"}
+          src={"./images/logo.svg"}
           alt="Logo Sneakers"
           width={130}
           height={130}
@@ -34,7 +34,7 @@ export default function Header() {
         )}
         <div>
           <Image
-            src={"/images/image-avatar.png"}
+            src={"./images/image-avatar.png"}
             alt="Avatar image"
             width={30}
             height={30}

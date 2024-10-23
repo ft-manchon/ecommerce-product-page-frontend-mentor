@@ -7,10 +7,10 @@ const productsData = [
     discount: 0.5,
     price: 250 * 0.5,
     images: {
-      1: '/images/image-product-1',
-      2: '/images/image-product-2',
-      3: '/images/image-product-3',
-      4: '/images/image-product-4'
+      1: './images/image-product-1',
+      2: './images/image-product-2',
+      3: './images/image-product-3',
+      4: './images/image-product-4'
     }
   }
 ]
